@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Alo & Sol</title>
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="logo.jpeg" alt="Logo" />
+    </div>
+    <div class="titulo">
+      <h1>Alo & Sol</h1>
+      <p>Detalles Eternos</p>
+    </div>
+    <div class="boton-pedidos">
+      <button onclick="mostrarPedidos()">Mis Pedidos</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="productos">
+      <!-- 12 productos con botón Agregar -->
+      <div class="producto">
+        <img src="Rosa Encantada $430.jpeg" alt="Producto 1" />
+        <h3>Rosa Encantada</h3>
+        <p>$430.00</p>
+        <button onclick="agregarPedido('Rosa Encantada', 430)">Agregar</button>
+      </div>
+      <div class="producto">
+        <img src="Amanecer Floral $230.jpeg" alt="Producto 2" />
+        <h3>Amanecer Floral</h3>
+        <p>$230.00</p>
+        <button onclick="agregarPedido('manecer Floral', 230)">Agregar</button>
+      </div>
+      <div class="producto">
+        <img src="Dulce Amor $300.jpeg" alt="Producto 3" />
+        <h3>Dulce Amor</h3>
+        <p>$300.00</p>
+        <button onclick="agregarPedido('Dulce Amor', 300)">Agregar</button>
+      </div>
+      <div class="producto">
+        <img src="Amor Pastel $220.jpeg" alt="Producto 4" />
+        <h3>Amor Pastel</h3>
+        <p>$220.00</p>
+        <button onclick="agregarPedido('Amor Pastel', 220)">Agregar</button>
+      </div>
+      <div class="producto">
+        <img src="Cielo Azul $250.jpeg" alt="Producto 5" />
+        <h3>Cielo Azul</h3>
+        <p>$250.00</p>
+        <button onclick="agregarPedido('Cielo Azul', 250)">Agregar</button>
+      </div>
+      <div class="producto">
+        <img src="Ramo Sobre Ruedas $290.jpeg" alt="Producto 6" />
+        <h3>Ramo Sobre Ruedas</h3>
+        <p>$290.00</p>
+        <button onclick="agregarPedido('Ramo Sobre Ruedas', 290)">Agregar</button>
+      </div>
+      <div class="producto">
+        <img src="Encanto Lila $170.jpeg" alt="Producto 7" />
+        <h3>Encanto Lila</h3>
+        <p>$170.00</p>
+        <button onclick="agregarPedido('Encanto Lila', 170)">Agregar</button>
+      </div>
+      <div class="producto">
+        <img src="Barbie $270.jpeg" alt="Producto 8" />
+        <h3>Barbie</h3>
+        <p>$270.00</p>
+        <button onclick="agregarPedido('Barbie', 270)">Agregar</button>
+      </div>
+      <div class="producto">
+        <img src="Amor al Cruz Azul $280.jpeg" alt="Producto 9" />
+        <h3>Amor al Cruz Azul</h3>
+        <p>$280.00</p>
+        <button onclick="agregarPedido('Amor al Cruz Azul', 280)">Agregar</button>
+      </div>
+      <div class="producto">
+        <img src="Corazon Eterno $250.jpeg" alt="Producto 10" />
+        <h3>Corazon Eterno</h3>
+        <p>$250.00</p>
+        <button onclick="agregarPedido('Corazon Eterno', 250)">Agregar</button>
+      </div>
+      <div class="producto">
+        <img src="Dulce Amor $300.jpeg" alt="Producto 11" />
+        <h3>Dulce Amor</h3>
+        <p>$300.00</p>
+        <button onclick="agregarPedido('Dulce Amor', 300)">Agregar</button>
+      </div>
+      <div class="producto">
+        <img src="Antojo Floral $285.jpeg" alt="Producto 12" />
+        <h3>Antojo Floral</h3>
+        <p>$285.00</p>
+        <button onclick="agregarPedido('Antojo Floral', 285)">Agregar</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal pedidos -->
+  <div id="ventanaPedidos" class="modal">
+    <div class="contenido-modal">
+      <span class="cerrar" onclick="cerrarPedidos()">&times;</span>
+      <h2>Mis pedidos</h2>
+      <div id="listaPedidos">
+        <p>No hay pedidos aún.</p>
+      </div>
+      <button onclick="eliminarPedidos()">Eliminar todos</button>
+      <button onclick="mostrarPago()">Pagar</button>
+    </div>
+  </div>
+
+  <!-- Modal pago -->
+  <div id="ventanaPago" class="modal">
+    <div class="contenido-modal">
+      <span class="cerrar" onclick="cerrarPago()">&times;</span>
+      <h2>Información de Pago</h2>
+      <form onsubmit="enviarPago(event)">
+        <input id="numeroTarjeta" type="text" placeholder="Número de tarjeta" required />
+        <input id="nombreTitular" type="text" placeholder="Nombre en la tarjeta" required />
+        <input id="cvv" type="text" placeholder="CVV" required />
+        <button type="submit">Confirmar pago</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Notificación -->
+  <div id="notificacion" class="notificacion"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
